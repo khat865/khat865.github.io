@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jiyao Yang</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            border-bottom: 1px solid #eee;
+            padding: 20px 0;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .nav-links a:hover {
+            color: #333;
+        }
+
+        /* Main Content */
+        .main {
+            padding: 60px 0;
+        }
+
+        .section {
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        /* Hero */
+        .hero {
+            margin-bottom: 80px;
+        }
+
+        .hero h1 {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .hero p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .contact-item {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .contact-item a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        /* Education */
+        .education-item {
+            margin-bottom: 30px;
+        }
+
+        .education-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+
+        .education-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .education-degree {
+            font-size: 14px;
+            color: #666;
+            margin: 5px 0;
+        }
+
+        .education-period {
+            font-size: 14px;
+            color: #888;
+            white-space: nowrap;
+        }
+
+        .coursework {
+            margin-top: 15px;
+        }
+
+        .coursework h4 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        .coursework p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* Experience */
+        .experience-item {
+            margin-bottom: 30px;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 8px;
+        }
+
+        .company {
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .role {
+            font-size: 14px;
+            color: #666;
+            margin: 5px 0;
+        }
+
+        .experience-period {
+            font-size: 14px;
+            color: #888;
+            white-space: nowrap;
+        }
+
+        .achievements {
+            list-style: none;
+            margin-top: 10px;
+        }
+
+        .achievements li {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 8px;
+            line-height: 1.5;
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .achievements li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #ccc;
+        }
+
+        /* Projects */
+        .project-item {
+            margin-bottom: 30px;
+        }
+
+        .project-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .project-subtitle {
+            font-size: 14px;
+            color: #888;
+            margin-bottom: 10px;
+        }
+
+        .project-description {
+            list-style: none;
+        }
+
+        .project-description li {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 6px;
+            line-height: 1.5;
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .project-description li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #ccc;
+        }
+
+        /* Publications */
+        .publication-item {
+            margin-bottom: 30px;
+        }
+
+        .publication-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .authors {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .publication-status {
+            font-size: 14px;
+            color: #888;
+            margin-bottom: 10px;
+        }
+
+        .publication-link {
+            font-size: 14px;
+            color: #333;
+            text-decoration: none;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .publication-link:hover {
+            border-bottom-color: #333;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+        }
+
+        .skill-category h3 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .skill-list {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* Footer */
+        .footer {
+            border-top: 1px solid #eee;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .footer p {
+            font-size: 14px;
+            color: #888;
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .nav {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .nav-links {
+                gap: 20px;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .education-header,
+            .experience-header {
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .education-period,
+            .experience-period {
+                align-self: flex-start;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">Jiyao Yang</div>
+                <ul class="nav-links">
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#publications">Publications</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <!-- Hero Section -->
+            <section class="hero">
+                <h1>Jiyao Yang</h1>
+                <p>Computer Vision & AI Researcher</p>
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        Email: <a href="mailto:yjy00312@gmail.com">yjy00312@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        Phone: 18989290490
+                    </div>
+                    <div class="contact-item">
+                        GitHub: <a href="https://github.com/khat865" target="_blank">github.com/khat865</a>
+                    </div>
+                    <div class="contact-item">
+                        Website: <a href="#" target="_blank">yourwebsite.com</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Education -->
+            <section id="education" class="section">
+                <h2 class="section-title">Education</h2>
+                <div class="education-item">
+                    <div class="education-header">
+                        <div>
+                            <div class="education-title">Southwest Jiaotong University</div>
+                            <div class="education-degree">BS in Intelligent Manufacturing</div>
+                            <div class="education-degree">Average Score: 81.92</div>
+                        </div>
+                        <div class="education-period">Sept 2021 – June 2025</div>
+                    </div>
+                    <div class="coursework">
+                        <h4>Coursework:</h4>
+                        <p>Advanced Mathematics, Linear Algebra, Data Structures and Algorithms, Probability Theory and Mathematical Statistics, Artificial Intelligence and Machine Learning, Intelligent Operation and Maintenance Technology, Artificial Intelligence and Robotics</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Experience -->
+            <section id="experience" class="section">
+                <h2 class="section-title">Experience</h2>
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="company">The University of Alabama at Birmingham</div>
+                            <div class="role">Intern of Computer Vision Algorithms</div>
+                        </div>
+                        <div class="experience-period">March 2025 – Sept 2025</div>
+                    </div>
+                    <ul class="achievements">
+                        <li>Collaborated with Yang Liu (Incoming Postdoctoral Associate at CMU) and Zhenyue Qin (Postdoctoral Associate at Yale University) on skeleton-based action recognition research</li>
+                        <li>Benchmarking the latest models, including GCN and Transformer-based architectures, extensively across multiple datasets</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Projects -->
+            <section id="projects" class="section">
+                <h2 class="section-title">Projects</h2>
+                
+                <div class="project-item">
+                    <div class="project-title">Research on Temperature Control in Prefabricated Cavern-type Substations</div>
+                    <div class="project-subtitle">Provincial SRTP</div>
+                    <ul class="project-description">
+                        <li>Connect the prefabricated substation model to the cloud server using a single-chip microcontroller</li>
+                        <li>Construct a temperature prediction framework based on regression, and combine feature engineering with multiple modeling methods to improve the prediction accuracy</li>
+                        <li>Control the heat dissipation of the internal air conditioning of the auxiliary model</li>
+                    </ul>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-title">A Visual Detection Method for Surface Defects on Chips Based on The Improved YOLO11</div>
+                    <ul class="project-description">
+                        <li>Evaluated mainstream object detection models (e.g., YOLO series, Fast-RCNN) and selected YOLO11 as the baseline</li>
+                        <li>Incorporates a heatmap structure to enhance focus on key regions, improving detection of small and blurry targets</li>
+                        <li>Designs an adaptive multi-feature fusion module using parametric linear combination and soft clustering to generate an optimized fourth-channel feature, strengthening discrimination of low-contrast defects</li>
+                    </ul>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-title">Skeleton-Based Action Recognition</div>
+                    <ul class="project-description">
+                        <li>Reviews and groups skeleton-based action recognition methods into four representation-based categories, analyzing how each influences spatio-temporal modeling selection</li>
+                        <li>Benchmarks 19 methods on the Anubis dataset (e.g., STGCN, DeGCN, LAGCN), revealing model rankings and correlations between performance and input representation types</li>
+                        <li>Shows that multi-representation fusion only benefits specific actions, uncovers action-representation dependencies, and highlights limitations in fine-grained and interaction recognition</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Publications -->
+            <section id="publications" class="section">
+                <h2 class="section-title">Publications</h2>
+                <div class="publication-item">
+                    <div class="publication-title">Representation-Centric Survey of Skeletal Action Recognition and the ANUBIS Benchmark</div>
+                    <div class="authors">Yang Liu*, Jiyao Yang*, Madhawa Perera, Pan Ji, Dongwoo Kim, Min Xu, Tianyang Wang, Saeed Anwar, Tom Gedeon, Lei Wang, Zhenyue Qin</div>
+                    <div class="publication-status">Under review by TIP</div>
+                    <a href="https://arxiv.org/abs/2205.02071" class="publication-link" target="_blank">arXiv:2205.02071</a>
+                </div>
+            </section>
+
+            <!-- Skills -->
+            <section id="skills" class="section">
+                <h2 class="section-title">Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Languages</h3>
+                        <div class="skill-list">
+                            College English Test Band 4/6<br>
+                            IELTS 6.5
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>Programming</h3>
+                        <div class="skill-list">
+                            C<br>
+                            Python
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Jiyao Yang</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
