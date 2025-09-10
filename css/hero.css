@@ -1,0 +1,105 @@
+/* Hero Section */
+.hero {
+    margin-bottom: 80px;
+}
+
+.hero-content {
+    display: flex;
+    gap: 60px;
+    align-items: flex-start;
+}
+
+.hero-text {
+    flex: 2;
+}
+
+.hero-photo {
+    flex: 1;
+    min-width: 200px;
+}
+
+.photo-placeholder {
+    width: 200px;
+    height: 250px;
+    border: 2px dashed #ccc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #888;
+    font-size: 14px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.hero h1 {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.hero p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 40px;
+}
+
+.contact-item {
+    font-size: 14px;
+    color: #666;
+}
+
+.contact-item a {
+    color: #333;
+    text-decoration: none;
+}
+
+.contact-item a:hover {
+    text-decoration: underline;
+}
+
+.bibliography {
+    margin-top: 40px;
+}
+
+.bibliography h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.bibliography p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .hero-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .hero-photo {
+        align-self: center;
+    }
+
+    .photo-placeholder {
+        width: 150px;
+        height: 200px;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+}
