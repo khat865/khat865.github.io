@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jiyao Yang - Personal Website</title>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/education.css">
+    <link rel="stylesheet" href="css/experience.css">
+    <link rel="stylesheet" href="css/projects.css">
+    <link rel="stylesheet" href="css/publications.css">
+    <link rel="stylesheet" href="css/skills.css">
+    <link rel="stylesheet" href="css/footer.css">
+
+    <!-- Google Analytics (可选) -->
+    <!-- 
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_TRACKING_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_TRACKING_ID');
+    </script>
+    -->
+</head>
+<body>
+    <!-- Header -->
+    <div id="header-container"></div>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <!-- Hero Section -->
+            <div id="hero-container"></div>
+
+            <!-- Education Section -->
+            <div id="education-container"></div>
+
+            <!-- Experience Section -->
+            <div id="experience-container"></div>
+
+            <!-- Projects Section -->
+            <div id="projects-container"></div>
+
+            <!-- Publications Section -->
+            <div id="publications-container"></div>
+
+            <!-- Skills Section -->
+            <div id="skills-container"></div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer-container"></div>
+
+    <!-- 访客统计入口（仅管理员可见） -->
+    <div id="admin-panel" style="position: fixed; bottom: 20px; right: 20px; display: none;">
+        <button onclick="openVisitorDashboard()" style="
+            background: #667eea; 
+            color: white; 
+            border: none; 
+            padding: 10px 15px; 
+            border-radius: 50%; 
+            cursor: pointer;
+            font-size: 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        ">📊</button>
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="js/visitor-tracking.js"></script>
+    <script src="js/smooth-scroll.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        // 管理员功能
+        function openVisitorDashboard() {
+            window.open('visitor-dashboard.html', '_blank');
+        }
+
+        // 检查是否为管理员（简单的方法，生产环境需要更安全的验证）
+        function checkAdminAccess() {
+            // 方法1: 通过URL参数
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('admin') === 'true') {
+                document.getElementById('admin-panel').style.display = 'block';
+                return;
+            }
+
+            // 方法2: 通过localStorage记住管理员状态
+            if (localStorage.getItem('isAdmin') === 'true') {
+                document.getElementById('admin-panel').style.display = 'block';
+                return;
+            }
+
+            // 方法3: 通过键盘快捷键激活 (Ctrl+Shift+A)
+            document.addEventListener('keydown', function(e) {
+                if (e.ctrlKey && e.shiftKey && e.code === 'KeyA') {
+                    const password = prompt('请输入管理员密码:');
+                    if (password === 'yjy200302100312') { // 请修改为你的密码
+                        localStorage.setItem('isAdmin', 'true');
+                        document.getElementById('admin-panel').style.display = 'block';
+                        alert('管理员面板已激活');
+                    }
+                }
+            });
+        }
+
+        // 页面加载完成后检查管理员权限
+        document.addEventListener('DOMContentLoaded', checkAdminAccess);
+    </script>
+</body>
+</html>
